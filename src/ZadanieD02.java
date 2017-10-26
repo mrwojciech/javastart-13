@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 
 @WebServlet("/doMetrics")
 public class ZadanieD02 extends HttpServlet {
+    private final String NEXT_LINE ="<br>";
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -22,16 +24,18 @@ public class ZadanieD02 extends HttpServlet {
     private void writer(Double kg, Double m, PrintWriter writer) {
         Double kgDouble = kg;
         Double mDouble = m;
-
         writer.println("Twoje miary to: ");
-        writer.println("");
+        writer.println(NEXT_LINE);
         writer.println("Metr: " + mDouble);
-        writer.println();
+        writer.println(NEXT_LINE);
         writer.println("Kg: " + kgDouble);
-        writer.println();
+        writer.println(NEXT_LINE);
         writer.println("Cm: " + mDouble * 100);
+        writer.println(NEXT_LINE);
         writer.println("mm: " + mDouble * 100 * 100);
+        writer.println(NEXT_LINE);
         writer.println("gram: " + kgDouble * 100);
+        writer.println(NEXT_LINE);
         writer.println("mgram: " + kgDouble * 100 * 100);
 
     }

@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 
 @WebServlet("/changeMetrics")
 public class ZadanieD01 extends HttpServlet {
+    private final String NEXT_LINE ="<br/>";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -16,7 +17,6 @@ public class ZadanieD01 extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
         writer(textHolder, writer);
-//        doSomething(textHolder);
     }
 
     private void writer(String textHolder, PrintWriter writer) {
@@ -25,15 +25,15 @@ public class ZadanieD01 extends HttpServlet {
         int wordCounter = textHolder.split(" ").length;
         boolean isPalindrom = isPalindrom(textHolder);
         writer.println("Twoj tekst: ");
-        writer.println("");
+        writer.println(NEXT_LINE);
         writer.println("Ma tyle znakow: "+characterCounter);
-        writer.println();
+        writer.println(NEXT_LINE);
         writer.println("Ma tyle spacji: "+whiteCharacterCounter);
-        writer.println();
+        writer.println(NEXT_LINE);
         writer.println("Ma tyle slow: "+wordCounter);
-        writer.println();
+        writer.println(NEXT_LINE);
         writer.println("Czy jest palindromem?: "+isPalindrom);
-        writer.println();
+        writer.println(NEXT_LINE);
         writer.println(textHolder);
 
     }
